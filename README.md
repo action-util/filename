@@ -1,24 +1,27 @@
-# Clean Name JavaScript action
+# Split Path JavaScript action
 
-This action takes a string and turns it into a name suitable for upload as an
-artifact.
+This action takes a string splits at the last slash character, if any.
 
 ## Inputs
 
-### `dirty`
+### `path`
 
-**Required** The string to clean.
+**Required** The path to clean.
 
 ## Outputs
 
-### `clean`
+### `dirname`
 
-The cleaned name.
+Everything before the last slash, or nothing if there is no slash.
+
+### `basename`
+
+Everything after the last slash, or everything if there is no slash.
 
 ## Example usage
 
 ```yaml
-uses: nu-rust-course/clean-name@master
+uses: action-util/split-path@master
 with:
-  dirty: doc-${{ github.repository }}
+  path: ${{ github.repository }}
 ```

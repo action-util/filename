@@ -2,10 +2,15 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 
 try {
-  const dirty = core.getInput('dirty');
-  console.log(`dirty: “${dirty}”`);
-  const clean = dirty.replace(/[\\\/':<>|*?]/g, '_');
-  core.setOutput("clean", clean);
+  const path = core.getInput('path');
+  console.log(`path: “${path}”`);
+
+  const basename = path.replace(/.*\//, '');
+  const dirname = path.replace(/\/[^\/]*$/, '');
+
+  core.setOutput("dirname", dirname);
+  core.setOutput("basename", basename);
+
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
 } catch (error) {

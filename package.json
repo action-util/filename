@@ -1,22 +1,22 @@
 {
-  "name": "clean-name",
+  "name": "split-path",
   "version": "0.1.0",
-  "description": "This action removes some special characters from a string.",
+  "description": "This action splits a path on the final slash, if any.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nu-rust-course/clean-name.git"
+    "url": "git+https://github.com/action-util/split-path.git"
   },
   "keywords": [],
   "author": "Jesse A. Tov <jesse@cs.northwestern.edu>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nu-rust-course/clean-name/issues"
+    "url": "https://github.com/action-util/split-path/issues"
   },
-  "homepage": "https://github.com/nu-rust-course/clean-name#readme",
+  "homepage": "https://github.com/action-util/split-path#readme",
   "dependencies": {
     "@actions/core": "^1.1.0",
     "@actions/github": "^1.1.0"
