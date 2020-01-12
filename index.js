@@ -5,11 +5,9 @@ try {
   const path = core.getInput('path');
   console.log(`path: “${path}”`);
 
-  const match = path.match(/^(.*)\/([^\\]*)$/);
-
-  if (match) {
-    core.setOutput('dirname', match[2]);
-    core.setOutput('basename', match[3]);
+  if (path.match(/\//) {
+    core.setOutput('dirname', path.replace(/\/[^/]*$/, '');
+    core.setOutput('basename', path.replace(/.*\//, '');
   } else {
     core.setOutput('dirname', '.');
     core.setOutput('basename', path);
