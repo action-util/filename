@@ -12,10 +12,10 @@ try {
   const path = core.getInput('path');
   console.log(`path: “${path}”`);
 
-  if (path.match(/[\/]/) {
+  if (path.match(/[/]/)) {
     setOutputs(
-      path.replace(/[\/][^\/]*$/, ''),
-      path.replace(/.*[\/]/, '')
+      path.replace(/[/][^/]*$/, ''),
+      path.replace(/.*[/]/, '')
     );
   } else {
     setOutputs('.', path);
