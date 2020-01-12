@@ -1,23 +1,24 @@
-# Hello world JavaScript action
+# Clean Name JavaScript action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log. To learn how this action was built, see "[Creating a JavaScript action](https://help.github.com/en/articles/creating-a-javascript-action)" in the GitHub Help documentation.
+This action takes a string and turns it into a name suitable for upload as an
+artifact.
 
 ## Inputs
 
-### `who-to-greet`
+### `dirty`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** The string to clean.
 
 ## Outputs
 
-### `time`
+### `clean`
 
-The time we greeted you.
+The cleaned name.
 
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-javascript-action@master
+uses: nu-rust-course/clean-name@master
 with:
-  who-to-greet: 'Mona the Octocat'
+  dirty: doc-${{ github.repository }}
 ```
