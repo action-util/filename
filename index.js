@@ -1,16 +1,24 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 
+const setOutputs = (dirname, basename) => {
+  console.log(`dirname: “${dirname}”`);
+  console.log(`basename: “${basename}”`);
+  core.setOutput('dirname', dirname);
+  core.setOutput('basename', basename);
+};
+
 try {
   const path = core.getInput('path');
   console.log(`path: “${path}”`);
 
   if (path.match(/[\/]/) {
-    core.setOutput('dirname', path.replace(/[\/][^\/]*$/, '');
-    core.setOutput('basename', path.replace(/.*[\/]/, '');
+    setOutputs(
+      path.replace(/[\/][^\/]*$/, ''),
+      path.replace(/.*[\/]/, '')
+    );
   } else {
-    core.setOutput('dirname', '.');
-    core.setOutput('basename', path);
+    setOutputs('.', path);
   }
 
   const payload = JSON.stringify(github.context.payload, undefined, 2)
