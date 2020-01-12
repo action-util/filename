@@ -1,6 +1,6 @@
 {
   "name": "split-path",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "This action splits a path on the final slash, if any.",
   "main": "index.js",
   "scripts": {

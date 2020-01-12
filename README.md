@@ -21,7 +21,7 @@ Everything after the last slash, or everything if there is no slash.
 ## Example usage
 
 ```yaml
-uses: action-util/split-path@master
+uses: action-util/split-path@v1
 with:
   path: ${{ github.repository }}
 ```
