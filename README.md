@@ -12,11 +12,11 @@ Takes a path and splits it at the last slash character, if any.
 
 ### `dirname`
 
-If there’s a slash, everything before the last slash; otherwise, the string `'.'`.
+If there are any slashes in `path`, everything before the last slash; otherwise, the string `'.'`.
 
 ### `basename`
 
-If there’s a slash, everything after the last slash; otherwise, all of `path`.
+If there are any slashes in `path`, everything after the last slash; otherwise, all of `path`.
 
 ## Example usage
 
