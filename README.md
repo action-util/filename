@@ -1,4 +1,4 @@
-# Split Path JavaScript action
+# Split Path – JavaScript action
 
 Takes a path and splits it at the last slash character, if any.
 
@@ -12,11 +12,11 @@ Takes a path and splits it at the last slash character, if any.
 
 ### `dirname`
 
-Everything before the last slash, or nothing if there is no slash.
+If there’s a slash, everything before the last slash; otherwise, the string `'.'`.
 
 ### `basename`
 
-Everything after the last slash, or everything if there is no slash.
+If there’s a slash, everything after the last slash; otherwise, all of `path`.
 
 ## Example usage
 
