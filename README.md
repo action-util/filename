@@ -20,18 +20,13 @@ If there are any slashes in `path`, everything after the last slash; otherwise, 
 
 ## Example usage
 
-In this example we split the GitHub repository URI twice to obtain the plain name of the repo and the name of its owner (user or organization):
+In this example we split the value of a variable provided by GitHub actions to obtain the plain name of the repo and the name of its owner (user or organization):
 
 ```yaml
   - id: split-repo
     uses: action-util/split-path@v1
     with:
       path: ${{ github.repository }}
-      
-  - id: split-owner
-    uses: action-util/split-path@v1
-    with:
-      path: ${{ steps.split-repo.outputs.dirname }}
 ```
 
-Now `${{ steps.split-repo.outputs.basename }}` is the name of the repository, and `${{ steps.split-owner.outputs.basename }}` is the name of its owner.
+Now `${{ steps.split-repo.outputs.basename }}` is the name of the repository, and `${{ steps.split-repo.outputs.dirname }}` is the name of its owner.
